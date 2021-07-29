@@ -1,3 +1,4 @@
+const { POINT_CONVERSION_COMPRESSED } = require("constants");
 const { ADDRGETNETWORKPARAMS } = require("dns");
 
 const questions = [
@@ -12,3 +13,8 @@ const ask = (i = 0) => {
 };
 
 ask();
+
+process.stdin.on ("data", data => {
+    process.stdout.write(`\n\n ${data.toString().trim()} \n\n`);
+    process.exit();
+});
